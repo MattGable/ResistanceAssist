@@ -111,11 +111,15 @@ for i in range(1, player_num + 1):
     if player_loyalty_dict[i] == 'MERLIN':
         print "As Merlin, you know all.\n"
         for j in range(1, player_num + 1):
-            print "Player {0} is played by {1}, who is a {2}\n".format(j, player_name_dict[j], player_loyalty_dict[j])
-    if player_loyalty_dict[i] == 'SPY':
+            if player_loyalty_dict[j] == 'ASSASSIN':
+                #ASSASSIN == SPY from MERLIN POV
+                print "Player {0} is played by {1}, who is a SPY\n".format(j, player_name_dict[j])
+            else:
+                print "Player {0} is played by {1}, who is a {2}\n".format(j, player_name_dict[j], player_loyalty_dict[j])
+    if player_loyalty_dict[i] == 'SPY' or player_loyalty_dict[i] == 'ASSASSIN':
         print "As a spy, you get to know who the other spies are.\n"
         for k in range(1, player_num + 1):
-            if player_loyalty_dict[k] == 'SPY':
+            if player_loyalty_dict[k] == 'SPY' or player_loyalty_dict[k] == 'ASSASSIN':
                 print "Player {0}, {1}, is a SPY.".format(k, player_name_dict[k])
     if i <= player_num - 1:
         raw_input("Press ENTER to clear the screen, and hand the computer to {0}.".format(player_name_dict[i+1]))
