@@ -120,6 +120,7 @@ for i in range(1, player_num + 1):
         print "As a spy, you get to know who the other spies are.\n"
         for k in range(1, player_num + 1):
             if player_loyalty_dict[k] == 'SPY' or player_loyalty_dict[k] == 'ASSASSIN':
+                #ASSASSIN == SPY from SPY POV
                 print "Player {0}, {1}, is a SPY.".format(k, player_name_dict[k])
     if i <= player_num - 1:
         raw_input("Press ENTER to clear the screen, and hand the computer to {0}.".format(player_name_dict[i+1]))
