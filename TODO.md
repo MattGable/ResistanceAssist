@@ -2,4 +2,5 @@
 
 --All spies need to be informed of all other spies. if player_loyalty_dict[i] == 'SPY'...'ASSASSIN'...
 
---During the assignment screen when players get their roles, Merlin needs to see all players' roles, except the ASSASSIN, which will be displayed as 'SPY'--the same as the other evil minions.
+--During the assignment screen Merlin can see 'ASSASSIN', but should see 'SPY'
+
