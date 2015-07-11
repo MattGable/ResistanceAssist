@@ -103,10 +103,15 @@ if avalon_input == 'y' or avalon_input == 'Y':
                 player_loyalty_dict[i] = 'ASSASSIN'
                 assassin_chosen += 1
         
-#Display everyone's roles with a blank screen in between.
+#Display everyone's roles with a blank screen in between
 for i in range(1, player_num + 1):
     raw_input("Press ENTER to see Player {0}'s ROLE.".format(i))
-    print" Hello, {0}. As Player {1}, you happen to be a {2} this round.".format(player_name_dict[i], i, player_loyalty_dict[i])
+    print" Hello, {0}. As Player {1}, you happen to be a {2} this round.\n".format(player_name_dict[i], i, player_loyalty_dict[i])
+
+    if player_loyalty_dict[i] == 'MERLIN':
+        print "As Merlin, you know all.\n"
+        for j in range(1, player_num + 1):
+            print "Player {0} is played by {1}, who is a {2}\n".format(j, player_name_dict[j], player_loyalty_dict[j])
     if i <= player_num - 1:
         raw_input("Press ENTER to clear the screen, and hand the computer to {0}.".format(player_name_dict[i+1]))
         clear_console()
@@ -114,7 +119,7 @@ for i in range(1, player_num + 1):
         raw_input("Press ENTER to clear the screen, and get ready to play!")
         clear_console()
 
-#Clear the screen again and have a screen prompt. Pressing ENTER again will list all the players' alliances (if players are curious).         
+#Clear the screen again and have a screen prompt. Pressing ENTER again will list all the players' alliances (if players are curious)         
 print "Now everyone has seen their roles. Leave this screen up and PRESS ENTER to see everyone's roles after the game has ended."
 raw_input("Press ENTER after the game has ended.")
 
